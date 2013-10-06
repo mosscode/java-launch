@@ -1,4 +1,4 @@
-OVERVIEW/MAIN-GOAL
+PROJECT-GOAL
 ===========
 
 Create a generic means of specifying how to launch a java program.  
