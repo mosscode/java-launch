@@ -52,8 +52,8 @@ import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
 
 import junit.framework.TestCase;
+import bmsi.util.JavaDiff;
 
-import com.moss.diff.DiffCommand;
 import com.moss.jaxbhelper.JAXBHelper;
 
 public class SpecTest extends TestCase {
@@ -69,7 +69,7 @@ public class SpecTest extends TestCase {
 			JavaAppSpec spec = helper.readFromXmlString(xmlIn);
 			String xmlOut = helper.writeToXmlString(spec);
 			if(!xmlIn.equals(xmlOut)){
-				String diff = new DiffCommand().unifiedDiff(xmlIn, xmlOut);
+				String diff = new JavaDiff().unifiedDiff(xmlIn, xmlOut);
 				System.out.println(diff);
 				assertEquals(xmlIn, xmlOut);
 			}
@@ -87,7 +87,7 @@ public class SpecTest extends TestCase {
 			JavaAppletSpec spec = helper.readFromXmlString(xmlIn);
 			String xmlOut = helper.writeToXmlString(spec);
 			if(!xmlIn.equals(xmlOut)){
-				String diff = new DiffCommand().unifiedDiff(xmlIn, xmlOut);
+				String diff = new JavaDiff().unifiedDiff(xmlIn, xmlOut);
 				System.out.println(diff);
 				assertEquals(xmlIn, xmlOut);
 			}

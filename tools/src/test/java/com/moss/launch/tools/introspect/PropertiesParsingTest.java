@@ -44,6 +44,8 @@ import java.util.TreeSet;
 import junit.framework.AssertionFailedError;
 import junit.framework.TestCase;
 
+import bmsi.util.JavaDiff;
+
 import com.moss.diff.DiffCommand;
 import com.moss.launch.components.ComponentHandle;
 import com.moss.launch.components.CRC32ComponentHandle;
@@ -96,7 +98,7 @@ public class PropertiesParsingTest extends TestCase {
 		String a = toString(expected);
 		String b = toString(actual);
 		if(!a.equals(b)){
-			String diff = new DiffCommand().unifiedDiff(a, b);
+			String diff = new JavaDiff().unifiedDiff(a, b);
 			throw new AssertionFailedError("Not equal:\n" + diff);
 		}
 	}
